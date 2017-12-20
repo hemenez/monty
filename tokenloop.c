@@ -4,7 +4,7 @@
  *
  */
 
-int tokenloop(char *token)
+int tokenloop(char *token, int line_number)
 {
 	int i, j;
 	instruction_t in[] = {
@@ -29,7 +29,7 @@ int tokenloop(char *token)
 			{
 				if (isdigit(atoi(token[i + 1])))
 				{
-					in[j].f(stack, /*line_number*/);
+					in[j].f(stack, line_number);
 					return (1);
 				}
 				else
