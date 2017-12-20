@@ -48,5 +48,6 @@ int main(int argc, char *argv[]);
 void pushfxn(stack_t **stack, unsigned int number);
 void pallfxn(stack_t **stack, unsigned int number);
 void pint(stack_t **stack, unsigned int number)
+int tokenloop(char *token);
 
 #endif
