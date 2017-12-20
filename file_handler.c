@@ -7,6 +7,7 @@ void file_handler (const char *filename)
 {
 	size_t bufsize = 0;
 	int i = 0;
+	int a, b;
 	File *fp;
 	char *buffer = NULL, *token;
 
@@ -35,9 +36,23 @@ void file_handler (const char *filename)
 	while (getline(&buffer, &bufsize, fp) != -1)
 	{
 		token = strtok(buffer,"/n/r//t ");
-		while (token != NULL)
+		a = 0;
+		while (token != NULL && token[a] != '\0')
 		{
-
+			b = 0;
+			while (in[b].opcode != NULL)
+			{
+				if (strcmp(token[a], (in[b].opcode) == 0) &&
+				     (strlen(token[a]) == strlen(in[b].opcode))
+				{
+					if (isdigit(atoi(token[index + 1])))
+						in[secindex].f(stack, //line_number);
+					else
+						continue;
+				}
+				b++;
+			}
+			a++;
 		}
 	}
 	fclose(fp);
