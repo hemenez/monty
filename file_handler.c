@@ -1,16 +1,8 @@
 #include "monty.h"
 
-/**
- * file_handler - handles all operations on file
- */
-void file_handler (const char *filename)
+int tokenloop(char *token)
 {
-	size_t bufsize = 0;
-	int i = 0;
-	int a, b;
-	File *fp;
-	char *buffer = NULL, *token;
-
+	int i, j;
 	instruction_t in[] = {
 		{"push", pushfxn},
 		{"pall", pallfxn},
@@ -21,6 +13,42 @@ void file_handler (const char *filename)
 		{"nop", nopfxn},
 		{NULL, NULL},
 	};
+
+	i = 0;
+	while (token != NULL && token[i] != '\0')
+	{
+		j = 0;
+		while (in[j].opcode != NULL)
+		{
+			if (strcmp(token[i], in[j].opcode == 0) &&
+			    strlen(token[i]) == strlen(in[j].opcode))
+			{
+				if (isdigit(atoi(token[i + 1])))
+				{
+					in[j].f(stack, /*line_number*/);
+					return (1);
+				}
+				else
+					continue;
+			}
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+/**
+ * file_handler - handles all operations on file
+ */
+void file_handler (const char *filename)
+{
+	size_t bufsize = 0;
+	int i = 0;
+	int x;
+	File *fp;
+	char *buffer = NULL, *token;
+
+
 	//check if user gives more than one argument: argv
 	if (filename == NULL)
 	{
@@ -36,24 +64,11 @@ void file_handler (const char *filename)
 	while (getline(&buffer, &bufsize, fp) != -1)
 	{
 		token = strtok(buffer,"/n/r//t ");
-		a = 0;
-		while (token != NULL && token[a] != '\0')
-		{
-			b = 0;
-			while (in[b].opcode != NULL)
-			{
-				if (strcmp(token[a], (in[b].opcode) == 0) &&
-				     (strlen(token[a]) == strlen(in[b].opcode))
-				{
-					if (isdigit(atoi(token[index + 1])))
-						in[secindex].f(stack, //line_number);
-					else
-						continue;
-				}
-				b++;
-			}
-			a++;
-		}
+		x = tokenloop(token);
+		if (x == 0)
+			/* didn't work*/;
+		else
+			/*did work and found opcode */;
 	}
 	fclose(fp);
 	free(buffer)
