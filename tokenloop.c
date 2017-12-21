@@ -27,8 +27,8 @@ int tokenloop(char *token, int line_number)
 			if (strcmp(token[i], in[j].opcode == 0) &&
 			    strlen(token[i]) == strlen(in[j].opcode))
 			{
-				x = atoi(token[i + 1]);
-				if (x != 0)
+				op_int = atoi(token[i + 1]);
+				if (op_int != 0)
 				{
 					in[j].f(stack, line_number);
 					return (1);
