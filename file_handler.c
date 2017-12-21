@@ -62,6 +62,7 @@ void file_handler (const char *filename)
 		line_num++;
 	}
 	fclose(fp); free(buffer);
+	free_nodes(&stack);
 }
 
 /**
