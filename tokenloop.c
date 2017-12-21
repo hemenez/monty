@@ -1,20 +1,20 @@
 #include "monty.h"
+int op_int;
 /**
- *
- *
+ * tokenloop - function will send tokenized piece to see if it matches opcode
+ * @token: represents first token tokenized from buffer
+ * @line_number: represents line's number of match to be passed
+ * @stack: represents double pointer to linked list
+ * Return: function returns 1 if match, 0 if else
  */
 
-int tokenloop(char *token, unsigned int line_number)
+int tokenloop(char *token, unsigned int line_number, stack_t **stack)
 {
-	int i, j, x;
+	int i, j;
 	instruction_t in[] = {
 		{"push", pushfxn},
 		{"pall", pallfxn},
 		{"pint", pintfxn},
-/*		{"pop", popfxn},
-		{"swap", swapfxn},
-		{"add", addfxn},
-		{"nop", nopfxn}, */
 		{NULL, NULL},
 	};
 
@@ -27,14 +27,8 @@ int tokenloop(char *token, unsigned int line_number)
 			if ((strcmp(token, (in[j].opcode)) == 0) &&
 			    (strlen(token) == strlen(in[j].opcode)))
 			{
-				op_int = atoi(token[i + 1]);
-				if (op_int != 0)
-				{
-					in[j].f(stack, line_number);
-					return (1);
-				}
-				else
-					return (0);
+				in[j].f(stack, line_number);
+				return (1);
 			}
 			j++;
 		}
