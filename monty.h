@@ -49,5 +49,6 @@ void pintfxn(stack_t **stack, unsigned int line_number);
 int tokenloop(char *token, unsigned int line_number, stack_t **stack);
 void popfxn(stack_t **stack, unsigned int line_number);
 void free_nodes(stack_t **stack);
+void addfxn(stack_t **stack, unsigned int line_number);
 
 #endif
