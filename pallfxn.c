@@ -18,5 +18,4 @@ void pallfxn(stack_t **stack, unsigned int number)
 		printer = printer->next;
 		i++;
 	}
-	return (i);
 }

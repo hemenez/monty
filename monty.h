@@ -42,7 +42,7 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern stack_t **stack = NULL;
+extern int op_int;
 void file_handler (char *filename);
 int main(int argc, char *argv[]);
 void pushfxn(stack_t **stack, unsigned int number);

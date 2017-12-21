@@ -5,13 +5,14 @@
 void file_handler (const char *filename)
 {
 	size_t bufsize = 0;
-	int i = 0;
+	int line_num = 1;
 	int x;
 	File *fp;
 	char *buffer = NULL, *token;
+	stack_t *stack;
 
+	stack = NULL;
 
-	//check if user gives more than one argument: argv
 	if (filename == NULL)
 	{
 		printf("USAGE: monty file\n");
@@ -26,11 +27,13 @@ void file_handler (const char *filename)
 	while (getline(&buffer, &bufsize, fp) != -1)
 	{
 		token = strtok(buffer,"/n/r//t ");
-		x = tokenloop(token);
+		x = tokenloop(token, line_num);
 		if (x == 0)
-			/* didn't work*/;
-		else
-			/*did work and found opcode */;
+		{
+			printf("L%i: unknown instruction %s\n", line_num, token);
+			exit(EXIT_FAILURE);
+		}
+		line_num++;
 	}
 	fclose(fp);
 	free(buffer)
