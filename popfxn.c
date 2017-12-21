@@ -18,7 +18,6 @@ void popfxn(stack_t **stack, unsigned int line_number)
 		printf("%d: can't pop an empty stack\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-
 	*stack = (*stack)->next;
 	free(temp);
 }
