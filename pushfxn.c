@@ -16,6 +16,7 @@ void pushfxn(stack_t **stack, unsigned int line_number)
 	if (new_node == NULL)
 	{
 		printf("Error: malloc failed/n");
+		free_nodes(stack);
 		exit(EXIT_FAILURE);
 	}
 	new_node->n = op_int;
