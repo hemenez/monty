@@ -1,5 +1,5 @@
-#ifndef STACK
-#define STACK
+#ifndef _MONTY_H_
+#define _MONTY_H_
 
 #include <unistd.h>
 #include <stdio.h>
@@ -7,11 +7,9 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <sys/wait.h>
-#include <fcntl.h>
 #include <string.h>
-#include <stdarg.h>
 
+extern int op_int;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -42,12 +40,11 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern int op_int;
-void file_handler (char *filename);
+void file_handler (const char *filename);
 int main(int argc, char *argv[]);
-void pushfxn(stack_t **stack, unsigned int number);
-void pallfxn(stack_t **stack, unsigned int number);
-void pintfxn(stack_t **stack, unsigned int number);
-int tokenloop(char *token, unsigned int number);
+void pushfxn(stack_t **stack, unsigned int line_number);
+void pallfxn(stack_t **stack, unsigned int line_number);
+void pintfxn(stack_t **stack, unsigned int line_number);
+int tokenloop(char *token, unsigned int line_number, stack_t **stack);
 
 #endif
