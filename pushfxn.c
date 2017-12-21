@@ -7,7 +7,7 @@
 
 void pushfxn(stack_t **stack, unsigned int number)
 {
-	stack_t new_node = malloc(sizeof(stack_t));
+	stack_t *new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
 		printf("Error: malloc failed/n");
