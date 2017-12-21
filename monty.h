@@ -9,7 +9,7 @@
 #include <sys/stat.h>
 #include <sys/wait.h>
 #include <fcntl.h>
-#include <sting.h>
+#include <string.h>
 #include <stdarg.h>
 
 /**
@@ -47,7 +47,7 @@ void file_handler (char *filename);
 int main(int argc, char *argv[]);
 void pushfxn(stack_t **stack, unsigned int number);
 void pallfxn(stack_t **stack, unsigned int number);
-void pint(stack_t **stack, unsigned int number)
-int tokenloop(char *token);
+void pintfxn(stack_t **stack, unsigned int number);
+int tokenloop(char *token, unsigned int number);
 
 #endif
