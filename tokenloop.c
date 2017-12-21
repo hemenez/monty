@@ -17,6 +17,7 @@ int tokenloop(char *token, unsigned int line_number, stack_t **stack)
 		{"pint", pintfxn},
 		{"pop", popfxn},
 		{"add", addfxn},
+		{"swap", swapfxn},
 		{NULL, NULL},
 	};
 
