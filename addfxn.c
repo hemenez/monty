@@ -15,7 +15,7 @@ void addfxn(stack_t **stack, unsigned int line_number)
 	temp = *stack;
 	if (temp == NULL || temp->next == NULL)
 	{
-		printf("L%d:, can't add, stack too short\n", line_number);
+		printf("L%d: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
