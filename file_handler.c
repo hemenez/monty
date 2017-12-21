@@ -14,6 +14,7 @@ void file_handler (const char *filename)
 
 	if (filename == NULL)
 	{
+		free_nodes(&stack);
 		printf("USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
