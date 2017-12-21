@@ -4,17 +4,17 @@
  *
  */
 
-int tokenloop(char *token, int line_number)
+int tokenloop(char *token, unsigned int line_number)
 {
 	int i, j, x;
 	instruction_t in[] = {
 		{"push", pushfxn},
 		{"pall", pallfxn},
 		{"pint", pintfxn},
-		{"pop", popfxn},
+/*		{"pop", popfxn},
 		{"swap", swapfxn},
 		{"add", addfxn},
-		{"nop", nopfxn},
+		{"nop", nopfxn}, */
 		{NULL, NULL},
 	};
 
