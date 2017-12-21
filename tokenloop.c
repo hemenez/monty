@@ -24,8 +24,8 @@ int tokenloop(char *token, unsigned int line_number)
 		j = 0;
 		while (in[j].opcode != NULL)
 		{
-			if (strcmp(token[i], in[j].opcode == 0) &&
-			    strlen(token[i]) == strlen(in[j].opcode))
+			if ((strcmp(token, (in[j].opcode)) == 0) &&
+			    (strlen(token) == strlen(in[j].opcode)))
 			{
 				op_int = atoi(token[i + 1]);
 				if (op_int != 0)
