@@ -43,7 +43,7 @@ void file_handler (const char *filename)
 			}
 			while (newtoken[i])
 			{
-				if (!isdigit(newtoken[i] + 0))
+				if (!isdigit(newtoken[i] + 0) && newtoken[0] != '-')
 				{
 					printf("L%d: usage: push integer\n", line_num);
 					free_nodes(&stack);
