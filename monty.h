@@ -8,6 +8,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <string.h>
+#include <ctype.h>
 
 extern int op_int;
 /**
@@ -46,5 +47,7 @@ void pushfxn(stack_t **stack, unsigned int line_number);
 void pallfxn(stack_t **stack, unsigned int line_number);
 void pintfxn(stack_t **stack, unsigned int line_number);
 int tokenloop(char *token, unsigned int line_number, stack_t **stack);
+void popfxn(stack_t **stack, unsigned int line_number);
+void free_nodes(stack_t **stack);
 
 #endif
