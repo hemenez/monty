@@ -6,7 +6,7 @@
 
 int tokenloop(char *token, int line_number)
 {
-	int i, j;
+	int i, j, x;
 	instruction_t in[] = {
 		{"push", pushfxn},
 		{"pall", pallfxn},
@@ -27,13 +27,14 @@ int tokenloop(char *token, int line_number)
 			if (strcmp(token[i], in[j].opcode == 0) &&
 			    strlen(token[i]) == strlen(in[j].opcode))
 			{
-				if (isdigit(atoi(token[i + 1])))
+				x = atoi(token[i + 1]);
+				if (x != 0)
 				{
 					in[j].f(stack, line_number);
 					return (1);
 				}
 				else
-					continue;
+					return (0);
 			}
 			j++;
 		}
