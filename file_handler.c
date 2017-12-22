@@ -43,7 +43,7 @@ void file_handler (const char *filename)
 			}
 			while (newtoken[i])
 			{
-				if (newtoken[i] == '-')
+				if (newtoken[i] == newtoken[0] && newtoken[0] == '-')
 					i++;
 				else if (!isdigit(newtoken[i] + 0))
 				{
