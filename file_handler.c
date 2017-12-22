@@ -8,7 +8,7 @@ int op_int;
  */
 void file_handler (const char *filename)
 {
-	size_t bufsize = 0; int line_num = 1; int x, i = 0;
+	size_t bufsize = 0; int line_num = 1; int x, i;
 	FILE *fp; char *buffer = NULL, *newtoken, *token;
 	stack_t *stack = NULL;
 
@@ -41,6 +41,7 @@ void file_handler (const char *filename)
 				free_nodes(&stack);
 				exit(EXIT_FAILURE);
 			}
+			i = 0;
 			while (newtoken[i])
 			{
 				if (i == 0 && newtoken[0] == '-')
