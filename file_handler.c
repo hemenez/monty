@@ -51,7 +51,8 @@ void file_handler (const char *filename)
 					free_nodes(&stack);
 					exit(EXIT_FAILURE);
 				}
-				i++;
+				else
+					i++;
 			}
 			op_int = atoi(newtoken);
 		}
