@@ -39,8 +39,8 @@ Code will be compiled in this way:
 
 ## Repository Contents
 This repository contains the following files:
-| **File** | **Description** |
-| -------- | --------------- |
+| **Function** | **Description** |
+| -------- | ----------- |
 | AUTHORS | Contains the authors of the project |
 | addfxn.c | Adds the top two elements of the stack |
 | entry_func.c | The main function that signifies the entry point to get the filename |
