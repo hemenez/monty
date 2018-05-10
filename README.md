@@ -39,21 +39,59 @@ Code will be compiled in this way:
 
 ## Repository Contents
 This repository contains the following files:
-| **Function** | **Description** |
-| -------- | ----------- |
-| `AUTHORS` | Contains the authors of the project |
-| `addfxn.c` | Adds the top two elements of the stack |
-| `entry_func.c` | The main function that signifies the entry point to get the filename |
-| `file_handler.c` | First function handles opening/reading/closing file. Second function handles freeing the linked list. |
-| `monty.h` | The header file |
-| `nopfxn.c` | Function does nothing |
-| `pallfxn.c` | Function prints all the values on the stack |
-| `pintfxn.c` | Function prints the value at the top of the stack |
-| `popfxn.c` | Function pops an element off the stack |
-| `pushfxn.c` | Function pushes an element to the stack |
-| `subfxn.c` | Function subtracts the top two elements of the stack |
-| `swapfxn.c` | Function swaps the top two elements of the stack |
-| `tokenloop.c` | Function will send tokenized piece to see if it matches opcode |
+
+### AUTHORS
+
+Contains the authors of the project
+
+### addfxn.c
+
+Adds the top two elements of the stack
+
+### entry_func.c
+
+The main function that signifies the entry point to get the filename
+
+### file_handler.c
+
+First function handles opening/reading/closing file
+Second function handles freeing the linked list.
+
+### monty.h
+
+The header file
+
+### nopfxn.c
+
+Function does nothing
+
+### pallfxn.c
+
+Function prints all the values on the stack
+
+### pintfxn.c
+
+Function prints the value at the top of the stack
+
+### popfxn.c
+
+Function pops an element off the stack
+
+### pushfxn.c
+
+Function pushes an element to the stack
+
+### subfxn.c
+
+Function subtracts the top two elements of the stack
+
+### swapfxn.c
+
+Function swaps the top two elements of the stack
+
+### tokenloop.c
+
+Function will send tokenized piece to see if it matches opcode
 
 ## Authors
 [Lindsey Hemenez](https://github.com/hemenez)
